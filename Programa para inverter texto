@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char texto[100];
+    int i, j;
+    char aux;
+
+    printf("Digite o texto para inverter: ");
+    fgets(texto, sizeof(texto), stdin);
+
+    texto[strcspn(texto, "\n")] = '\0';
+
+    int tamanho = strlen(texto);
+    i = 0;
+    j = tamanho - 1;
+
+    while (i < j) {
+        aux = texto[i];
+        texto[i] = texto[j];
+        texto[j] = aux;
+        i++;
+        j--;
+    }
+
+    printf("Dado invertido: %s\n", texto);
+
+syste("pause");
+
+    return 0;
+}
